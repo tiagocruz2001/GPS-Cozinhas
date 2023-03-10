@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CidalCozinhas</title>
+    <link rel="stylesheet" href="styles/homestyle.css" href="styles/menu.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre nós</a></li>
+          <li><a href="contactar.html">Contactos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <section class="product-page">
+            <div class="container">
+              <h2 class="product-title">Cozinha Sofia</h2>
+              <div class="product-image">
+                <img src="images/cozinha2.jpg" alt="Product Image">
+              </div>
+              <div class="product-description">
+                <p>
+                  
+                    Composição: 6 módulos: 1 módulo Inferior 700x400mm; 1 módulo de Forno 700x600mm; 1 módulo Superior 700x400mm; 1 módulo Superior 700x1000mm; 1 módulo de Exaustor 535x600mm; 1 módulo de Lava louça. Adereços não incluídos: eletrodomésticos, tampo, rodapés e puxadores. Os módulos podem ser vendidos separadamente.
+                    Artigo sob encomenda. Para confirmação do prazo de entrega, consulte a sua loja de preferência.NOTA: O stock desta cozinha aparece a zero por se tratar de uma composição de exemplo. As nossas cozinhas são modelares, pelo que o stock é verificado ao módulo individual e não ao conjunto.
+                </p>
+              </div>
+              <div class="product-options">
+                <h3>Eletrodomésticos:</h3>
+                <label><input type="checkbox"> Fogão</label>
+                <label><input type="checkbox"> Frigorífico</label>
+                <label><input type="checkbox"> Micro-ondas</label>
+                <label><input type="checkbox"> Exaustor</label>
+                <label><input type="checkbox"> Forno</label>
+
+
+
+              </div>
+              <br>
+              <h4>Cor da Cozinha:</h4>
+              
+<select name="cor" id="cor">
+  <option>Preto</option>
+  <option>Branco</option>
+  <option>Azul</option>
+  <option>Amarelo</option>
+  
+</select>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      margin-bottom: 20px;
+    }
+    
+    caption {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    th {
+      background-color: #1c1c1c;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    
+    td {
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    tr:hover td {
+      background-color: #e1e1e1;
+    }
+  </style>
+  
+  <table>
+    <caption>Medidas possíveis para cozinhas</caption>
+    <thead>
+      <tr>
+        <th>Tamanho</th>
+        <th>Comprimento (metros)</th>
+        <th>Largura (metros)</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pequena</td>
+        <td>2,5 - 3,0</td>
+        <td>2,0 - 2,5</td>
+        <td>2400€</td>
+      </tr>
+      <tr>
+        <td>Média</td>
+        <td>3,0 - 4,0</td>
+        <td>2,5 - 3,0</td>
+        <td>3500€</td>
+      </tr>
+      <tr>
+        <td>Grande</td>
+        <td>4,0 - 5,0</td>
+        <td>3,0 - 3,5</td>
+        <td>4000€</td>
+      </tr>
+    </tbody>
+  </table>
+  <label for="medida">Selecione a medida:</label>
+  <select id="medida">
+    <option value="">Selecione</option>"
+    <option value="pequena">Pequena</option>
+    <option value="media">Média</option>
+    <option value="grande">Grande</option>
+  </select>
+  <br>
+  <label for="montagem">Adicionar Instalação por um Técnico Certificado<span style="color:red"> 500€</span></label>
+  <input type="checkbox" id="montagem">
+  <br>
+  <div class="product-price">
+<strong><label for="preco-final">Preço final:</label></strong>
+  <span id="preco-final">0,00 €</span>
+</div>
+  
+  <script>
+    // Define o preço base da cozinha e o preço de montagem
+    const precoBase = {
+      pequena: 1500,
+      media: 2500,
+      grande: 3500
+    };
+    const precoMontagem = 500;
+  
+    // Atualiza o preço final com base na medida e na escolha de montagem
+    function atualizarPrecoFinal() {
+      const medida = document.getElementById("medida").value;
+      let preco = precoBase[medida];
+      if (document.getElementById("montagem").checked) {
+        preco += precoMontagem;
+      }
+      document.getElementById("preco-final").textContent = ` ${preco.toFixed(2)}€`;
+    }
+  
+    // Atualiza o preço final quando a medida ou a escolha de montagem são alteradas
+    document.getElementById("medida").addEventListener("change", atualizarPrecoFinal);
+    document.getElementById("montagem").addEventListener("change", atualizarPrecoFinal);
+  </script>
+
+
+  
+
+
+
+              
+<style>
+  .product-buy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .product-buy label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .product-buy input[type=number] {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+    text-align: center;
+  }
+
+  .product-buy input[type=submit] {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .product-buy input[type=submit]:hover {
+    background-color: #00796b;
+  }
+
+  #order-confirmation {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+    z-index: 999;
+text-align: center;
+}
+#order-confirmation p {
+		font-size: 1.2rem;
+		margin-bottom: 10px;
+	}
+
+	#order-confirmation button {
+		font-size: 1.2rem;
+		padding: 10px 20px;
+		background-color: #009688;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+		margin-top: 10px;
+	}
+
+	#order-confirmation button:hover {
+		background-color: #00796b;
+	}
+</style>
+
+<div class="product-buy">
+  <form id="order-form">
+    <label for="quantity">Quantidade:</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+    <input type="submit" value="Encomendar">
+  </form>
+</div>
+<div id="order-confirmation">
+	<p>Encomenda feita com sucesso!</p>
+	<button onclick="closePopup()">Fechar</button>
+</div>
+
+<script>
+	const orderForm = document.querySelector('#order-form');
+	const orderConfirmation = document.querySelector('#order-confirmation');
+
+	orderForm.addEventListener('submit', function(event) {
+		event.preventDefault();
+		const quantity = document.querySelector('#quantity').value;
+
+		// lógica de encomenda aqui
+
+		orderConfirmation.style.display = 'flex';
+	});
+
+	function closePopup() {
+		orderConfirmation.style.display = 'none';
+	}
+</script>
+
+                </form>
+              </div>
+            </div>
+          </section>
+
+      <section class="about-us">
+        <div class="container">
+         
+        </div>
+      </section>
+
+      <section class="about-us">
+        <h2>Fundadores</h2>
+        <h3>Rodrigo Sousa, Tiago Cruz e Diogo Santos</h3>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; CidalCozinhas 2023</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
